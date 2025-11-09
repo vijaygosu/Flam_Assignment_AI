@@ -16,19 +16,15 @@ Our goal is to find parameter values that minimize the difference between the th
 
 The model describing the curve is given by the following parametric equations:
 
-[
-\begin{cases}
-x(t) = t\cos(\theta) - e^{M|t|}\sin(0.3t)\sin(\theta) + X,[6pt]
-y(t) = 42 + t\sin(\theta) + e^{M|t|}\sin(0.3t)\cos(\theta),
-\end{cases}
-]
+x(t) = t*cos(theta) - e^(M|t|)*sin(0.3t)*sin(theta) + X  
+y(t) = 42 + t*sin(theta) + e^(M|t|)*sin(0.3t)*cos(theta)
 
-where (t \in [6, 60]).
-Here:
+where t ∈ [6, 60].
 
-* ( \theta ) controls the **rotation** of the curve,
-* ( M ) introduces **exponential scaling or damping**, and
-* ( X ) is the **horizontal translation** parameter.
+Here:  
+* theta controls the **rotation** of the curve,
+* M introduces **exponential scaling or damping**, and
+* X is the **horizontal translation** parameter.
 
 The dataset contains observed coordinates ((x_i, y_i)) for different (unknown) (t_i).
 Since (t_i) values are not explicitly given, we assume they are **uniformly spaced** within the given range.
@@ -46,27 +42,23 @@ Since (t_i) values are not explicitly given, we assume they are **uniformly spac
    For any chosen ((\theta, M, X)), the function predicts the curve coordinates.
 
 3. **Optimization Formulation**
-   To find the best-fit parameters, we defined a **loss function** measuring the total difference between predicted and actual points:
+   To find the best-fit parameters, we define a **loss function** measuring the total difference between predicted and actual points:
 
-   [
-   \mathcal{L}(\theta, M, X) = \sum_{i=1}^{N} \left( |x_i - x(t_i; \theta, M, X)| + |y_i - y(t_i; \theta, M, X)| \right)
-   ]
+L(theta, M, X) = Σ ( |x_i - x(t_i; theta, M, X)| + |y_i - y(t_i; theta, M, X)| )
 
-   This is an **L₁ loss** (sum of absolute errors), chosen for robustness against small data fluctuations.
+This is an **L1 loss** (sum of absolute errors), chosen for robustness against small data fluctuations.
 
 4. **Optimization Process**
-   The optimization problem is then expressed as:
+   The optimization problem is expressed as:
 
-   [
-   (\theta^*, M^*, X^*) = \arg\min_{\theta, M, X} \mathcal{L}(\theta, M, X)
-   ]
+(theta*, M*, X*) = argmin L(theta, M, X)
 
-   Subject to the constraints:
-   [
-   0^\circ < \theta < 50^\circ,\quad -0.05 < M < 0.05,\quad 0 < X < 100
-   ]
+Subject to:  
+0° < theta < 50°  
+-0.05 < M < 0.05  
+0 < X < 100
 
-   The **L-BFGS-B** algorithm from SciPy was used since it supports bounded nonlinear optimization efficiently.
+The **L-BFGS-B** algorithm from SciPy was used since it supports bounded nonlinear optimization efficiently.
 
 5. **Visualization**
    After optimization, the predicted curve ((x(t), y(t))) was plotted along with the actual data points using **Matplotlib** for validation.
@@ -87,14 +79,10 @@ The optimization converged successfully, yielding the following parameter estima
 
 ### 🔹 Final Fitted Equations
 
-[
-x(t) = t\cos(0.491) - e^{0.021389|t|}\sin(0.3t)\sin(0.491) + 54.9009
-]
-[
-y(t) = 42 + t\sin(0.491) + e^{0.021389|t|}\sin(0.3t)\cos(0.491)
-]
+x(t) = t*cos(0.491) - e^(0.021389*|t|)*sin(0.3t)*sin(0.491) + 54.9009  
+y(t) = 42 + t*sin(0.491) + e^(0.021389*|t|)*sin(0.3t)*cos(0.491)
 
-*(where (0.491) radians ≈ (28.1184^\circ))*
+*(where 0.491 radians ≈ 28.1184°)*
 
 ---
 
