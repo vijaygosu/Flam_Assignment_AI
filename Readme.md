@@ -71,9 +71,9 @@ The optimization converged successfully, yielding the following parameter estima
 
 | Parameter          | Symbol     | Estimated Value |
 | ------------------ | ---------- | --------------- |
-| Rotation Angle     | ( \theta ) | 28.1184°        |
-| Exponential Factor | ( M )      | 0.021389        |
-| Translation        | ( X )      | 54.9009         |
+| Rotation Angle     |  theta     | 28.1184°        |
+| Exponential Factor |   M        | 0.021389        |
+| Translation        |   X        | 54.9009         |
 
 ---
 
@@ -124,7 +124,7 @@ The resulting equation acts as a compact mathematical model that describes the u
 This assignment demonstrates how **mathematical modeling and optimization** can be combined to estimate unknown parameters in a nonlinear system.
 Through the use of **L-BFGS-B optimization** and an **L₁ loss function**, accurate estimates for θ, M, and X were obtained, producing a close match between predicted and observed data.
 
-This approach is commonly used in **AI model calibration, 3D reconstruction, and system identification** — all of which are relevant to FLAM’s focus on spatial computing and AI-driven simulation.
+
 
 ---
 
