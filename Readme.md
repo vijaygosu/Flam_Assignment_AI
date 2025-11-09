@@ -98,10 +98,10 @@ The close overlap confirms that the optimized parameters accurately describe the
 ## Mathematical Discussion
 
 The fitted model minimizes the **distance in the parametric space** between observed and predicted data.
-The parameter ( \theta ) primarily affects the slope and rotation of the curve, while ( M ) controls how sharply the curve bends due to the exponential term ( e^{M|t|} ).
-The translation ( X ) aligns the curve horizontally with the data.
+The parameter theta primarily affects the slope and rotation of the curve, while M controls how sharply the curve bends due to the exponential term e^M|t|.
+The translation X aligns the curve horizontally with the data.
 
-By iteratively adjusting these parameters, the optimizer finds the minimum of the loss function ( \mathcal{L}(\theta, M, X) ), which represents the most accurate alignment between theoretical and empirical data.
+By iteratively adjusting these parameters, the optimizer finds the minimum of the loss function L(theta, M, X), which represents the most accurate alignment between theoretical and empirical data.
 
 The resulting equation acts as a compact mathematical model that describes the underlying geometric behavior of the dataset.
 
