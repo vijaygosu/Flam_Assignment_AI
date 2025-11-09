@@ -1,8 +1,8 @@
-# Research & Development / AI Assignment
+# 🔹 Research & Development / AI Assignment
 
 ### **Parameter Estimation for a Parametric Curve**
 
-
+---
 
 ## Objective
 
@@ -10,7 +10,7 @@ The objective of this project is to estimate the unknown parameters **θ (theta)
 We are provided with a dataset of points ((x_i, y_i)) that approximately follow this curve.
 Our goal is to find parameter values that minimize the difference between the theoretical model and the given data, using mathematical optimization.
 
-
+---
 
 ## Mathematical Model
 
@@ -33,7 +33,7 @@ Here:
 The dataset contains observed coordinates ((x_i, y_i)) for different (unknown) (t_i).
 Since (t_i) values are not explicitly given, we assume they are **uniformly spaced** within the given range.
 
-
+---
 
 ## Methodology
 
@@ -71,7 +71,7 @@ Since (t_i) values are not explicitly given, we assume they are **uniformly spac
 5. **Visualization**
    After optimization, the predicted curve ((x(t), y(t))) was plotted along with the actual data points using **Matplotlib** for validation.
 
-
+---
 
 ## Results
 
@@ -83,9 +83,9 @@ The optimization converged successfully, yielding the following parameter estima
 | Exponential Factor | ( M )      | 0.021389        |
 | Translation        | ( X )      | 54.9009         |
 
+---
 
-
-### Final Fitted Equations
+### 🔹 Final Fitted Equations
 
 [
 x(t) = t\cos(0.491) - e^{0.021389|t|}\sin(0.3t)\sin(0.491) + 54.9009
@@ -96,7 +96,7 @@ y(t) = 42 + t\sin(0.491) + e^{0.021389|t|}\sin(0.3t)\cos(0.491)
 
 *(where (0.491) radians ≈ (28.1184^\circ))*
 
-
+---
 
 ## Visualization
 
@@ -105,7 +105,7 @@ The close overlap confirms that the optimized parameters accurately describe the
 
 ![alt text](image.png)
 
-
+---
 
 ## Mathematical Discussion
 
@@ -117,7 +117,7 @@ By iteratively adjusting these parameters, the optimizer finds the minimum of th
 
 The resulting equation acts as a compact mathematical model that describes the underlying geometric behavior of the dataset.
 
-
+---
 
 ## Tools Used
 
@@ -129,7 +129,7 @@ The resulting equation acts as a compact mathematical model that describes the u
 | **SciPy (optimize.minimize)** | Optimization of parameters                |
 | **Matplotlib**                | Visualization of fitted and observed data |
 
-
+---
 
 ## Conclusion
 
@@ -138,24 +138,18 @@ Through the use of **L-BFGS-B optimization** and an **L₁ loss function**, accu
 
 This approach is commonly used in **AI model calibration, 3D reconstruction, and system identification** — all of which are relevant to FLAM’s focus on spatial computing and AI-driven simulation.
 
-
+---
 
 ## Folder Structure for Submission
 
-
+```
 FLAM_Assignment/
 │
 ├── xy_data.csv
 ├── estimation.py
 ├── image.png
 └── README.md
+```
 
-
-
-
-**What to do next:**
-
-* Add your final plot under *Visualization*.
-* Save this as a PDF or Markdown file.
-* Zip the folder and submit it.
+---
 
